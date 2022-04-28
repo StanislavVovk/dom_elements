@@ -1,33 +1,28 @@
-'use strict';
-const box = document.getElementById("box"),
-    buttons = document.getElementsByTagName("button"),
-    circles = document.getElementsByClassName('circle'),
-    hearts = document.querySelectorAll(".heart"),
-    oneHeart = document.querySelector(".heart");
+"use strict";
 
-box.style.backgroundColor = "black";
-box.style.width = "200px";
-// box.style.cssText = `background-color: green; width: 250px`;
-buttons[1].style.borderRadius = "100%";
-
-// for (let i = 0; i < hearts.length; i++) {
-//     hearts[i].style.color = "yellow";
-//     hearts[i].style.border = "1px"
-//     hearts[i].style.borderColor = "black"
-//
+const buttons = document.querySelectorAll("button"),
+    overlay = document.querySelector(".overlay");
+// deprecated method
+// button.onclick = function () {
+//     alert('bulba')
 // }
 
-hearts.forEach(item =>{
-    item.style.backgroundColor = "blue";
+const deleter = (event) => {
+        console.log(event.currentTarget);
+        console.log(event.type);
+}
+
+// button.addEventListener("click", (event) =>{
+//     event.target.remove();
+// });
+// button.addEventListener("click",deleter);
+// overlay.addEventListener("click", deleter);
+
+buttons.forEach(button =>{
+    button.addEventListener("click", deleter);
 });
-
-// creating elements
-
-const newDiv = document.createElement("div");
-newDiv.style.backgroundColor = "green";
-newDiv.style.cssText = "backgroundColor: green;width: 100px; height: 90px;";
-newDiv.classList.add("green");
-document.body.querySelector(".wrapper").append(newDiv);
-
-// newDiv.innerHTML = "<h1>Hello word</h1>"
-newDiv.insertAdjacentHTML("beforebegin", "<h2>hello</h2>");
+const link = document.querySelector('a');
+link.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("hi");
+});
