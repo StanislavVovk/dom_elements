@@ -1,28 +1,19 @@
 "use strict";
 
-const buttons = document.querySelectorAll("button"),
-    overlay = document.querySelector(".overlay");
-// deprecated method
-// button.onclick = function () {
-//     alert('bulba')
-// }
+// console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
 
-const deleter = (event) => {
-        console.log(event.currentTarget);
-        console.log(event.type);
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+
+// console.log(document.querySelector("#current").parentNode);
+// console.log(document.querySelector("#current").parentElement);
+// console.log(document.querySelector("[data-current='3']").previousElementSibling);
+
+for (let node of document.body.childNodes) {
+    if (node.nodeName == "#text"){
+        continue;
+    }
+    console.log(node);
 }
-
-// button.addEventListener("click", (event) =>{
-//     event.target.remove();
-// });
-// button.addEventListener("click",deleter);
-// overlay.addEventListener("click", deleter);
-
-buttons.forEach(button =>{
-    button.addEventListener("click", deleter);
-});
-const link = document.querySelector('a');
-link.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("hi");
-});
